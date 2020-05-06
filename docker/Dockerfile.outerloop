@@ -9,7 +9,9 @@ FROM adoptopenjdk:11-jre-hotspot as layers
 WORKDIR /application
 ARG JAR_FILE=/usr/src/app/target/*.jar
 COPY --from=builder ${JAR_FILE} application.jar
-RUN java -Djarmode=layertools -jar application.jar extract
+RUN mkdir dependencies snapshot-dependencies resources application && \
+    java -Djarmode=layertools -jar application.jar extract
+    
 
 FROM adoptopenjdk:11-jre-hotspot as runtime
 USER 1000
