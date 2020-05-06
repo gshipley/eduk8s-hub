@@ -1,0 +1,49 @@
+spring:
+  mustache:
+    suffix: .html
+logging:
+  level:
+    web: DEBUG
+    com.eduk8s.hub: DEBUG
+
+##########
+# HUB CONFIGURATION
+##########
+hub:
+  refreshTimeout: 60
+##########
+# PORTAL CONFIGURATION
+##########
+catalog:
+  portals:
+    - name: lab-k8s-fundamentals
+      url: https://lab-k8s-fundamentals-ui.training.failk8s.dev
+      robot:
+        client_id: grumpy-old-man
+        client_secret: what-a-looser
+        username: robot@eduk8s
+        password: jorge-is-awesome
+##########
+# WEBSITE CONFIGURATION
+##########
+web:
+  site:
+    baseUrl:
+    title: eduk8s hub
+    img: eduk8s.png
+  copyright:
+    name: eduk8s
+    link: https://eduk8s.io
+  twitter: http://twitter.com/eduk8sio
+  github: http://github.com/eduk8s
+  analytics:
+  page:
+    defaultImage: eduk8s.png
+  web:
+    menu:
+      main: 
+        install:
+          name: Install
+          pre: <i class='fa fa-bolt'></i>
+          url: /pages/install/
+          weight: -200
